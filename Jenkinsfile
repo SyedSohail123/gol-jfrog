@@ -13,21 +13,21 @@ pipeline {
         stage('Building Artifacts and pushing to Jfrog Repository') {
             steps {
                 sh 'java -version'
-                rtMavenDeployer (
-                    tool: 'default'
-                    id: "MAVEN_DEPLOYER",
-                    serverId: "Jfrog_Devops",
-                    releaseRepo: 'qtdevops-libs-release-local',
-                    snapshotRepo: 'qtdevops-libs-snapshot-local'
-                )
-                rtMavenRun (                    
-                    pom: 'pom.xml',
-                    goals: 'clean install',
-                    deployerId: "MAVEN_DEPLOYER"
-                )
-                rtPublishBuildInfo (
-                    serverId: "Jfrog_Devops"
-                )   
+                // rtMavenDeployer (
+                //     tool: 'default'
+                //     id: "MAVEN_DEPLOYER",
+                //     serverId: "Jfrog_Devops",
+                //     releaseRepo: 'qtdevops-libs-release-local',
+                //     snapshotRepo: 'qtdevops-libs-snapshot-local'
+                // )
+                // rtMavenRun (                    
+                //     pom: 'pom.xml',
+                //     goals: 'clean install',
+                //     deployerId: "MAVEN_DEPLOYER"
+                // )
+                // rtPublishBuildInfo (
+                //     serverId: "Jfrog_Devops"
+                // )   
             }
         }
         stage('Publishing Test-Results') {
