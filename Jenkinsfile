@@ -2,8 +2,7 @@ pipeline {
     agent { label 'MAVEN_JDK8' }
     triggers { pollSCM('* * * * *') }
     tools {
-        jdk 'JAVA_17'
-        maven 'MAVEN-3.9.3'
+        jdk 'JAVA_17'        
     }
     stages {
         stage('Git') {
