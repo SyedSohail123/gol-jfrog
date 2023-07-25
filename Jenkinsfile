@@ -7,7 +7,7 @@ pipeline {
     }
     stages {
         stage('Git') {
-            git url: ''
+            git url: 'https://github.com/SyedSohail123/gol-jfrog.git'
                 branch: 'declarative'
         }
         stage('Building Artifacts and pushing to Jfrog Repository') {
