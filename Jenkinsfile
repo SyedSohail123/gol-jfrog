@@ -7,7 +7,7 @@ pipeline {
     }
     stages {
         stage('Git') {
-            git url: 'https://github.com/SyedSohail123/gol-jfrog.git'
+            git url: 'https://github.com/wakaleo/game-of-life.git'
                 branch: 'master'
         }
         stage('Building Artifacts and pushing to Jfrog Repository') {
