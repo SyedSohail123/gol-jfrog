@@ -16,7 +16,7 @@ pipeline {
                 rtMavenDeployer (
                     tool: 'default'
                     id: "MAVEN_DEPLOYER",
-                    serverId: "ARTIFACTORY_SERVER",
+                    serverId: "Jfrog_Devops",
                     releaseRepo: 'qtdevops-libs-release-local',
                     snapshotRepo: 'qtdevops-libs-snapshot-local'
                 )
@@ -26,7 +26,7 @@ pipeline {
                     deployerId: "MAVEN_DEPLOYER"
                 )
                 rtPublishBuildInfo (
-                    serverId: "ARTIFACTORY_SERVER"
+                    serverId: "Jfrog_Devops"
                 )   
             }
         }
