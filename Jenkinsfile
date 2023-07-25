@@ -2,8 +2,7 @@ pipeline {
     agent { label 'MAVEN_JDK8' }
     triggers { pollSCM('* * * * *') }
     tools {
-        jdk 'JDK_8'
-        maven 'default'        
+        jdk 'JDK_8'               
     }
     stages {
         stage('Git') {
@@ -14,6 +13,7 @@ pipeline {
         }
         stage('Building Artifacts and pushing to Jfrog Repository') {
             steps {
+                export PATH="/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH"
                 sh 'java --version'
                 sh 'mvn --version'
                 
