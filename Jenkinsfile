@@ -7,8 +7,10 @@ pipeline {
     }
     stages {
         stage('Git') {
+            steps {
             git url: 'https://github.com/wakaleo/game-of-life.git'
                 branch: 'master'
+            }
         }
         stage('Building Artifacts and pushing to Jfrog Repository') {
             steps {
