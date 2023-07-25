@@ -2,7 +2,8 @@ pipeline {
     agent { label 'MAVEN_JDK8' }
     triggers { pollSCM('* * * * *') }
     tools {
-        jdk 'JDK_8'        
+        jdk 'JDK_8'
+        maven 'default'        
     }
     stages {
         stage('Git') {
@@ -13,6 +14,7 @@ pipeline {
             steps {
                 sh 'java -version'
                 rtMavenDeployer (
+                    tool: 'default'
                     id: "MAVEN_DEPLOYER",
                     serverId: "ARTIFACTORY_SERVER",
                     releaseRepo: 'qtdevops-libs-release-local',
