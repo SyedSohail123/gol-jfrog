@@ -2,7 +2,7 @@ pipeline {
     agent { label 'MAVEN_JDK8' }
     triggers { pollSCM('* * * * *') }
     tools {
-        jdk 'JAVA_17'        
+        jdk 'JDK_8'        
     }
     stages {
         stage('Git') {
@@ -18,7 +18,7 @@ pipeline {
                     snapshotRepo: ARTIFACTORY_LOCAL_SNAPSHOT_REPO
                 )
                 rtMavenRun (                    
-                    pom: 'maven-examples/maven-example/pom.xml',
+                    pom: 'pom.xml',
                     goals: 'clean install',
                     deployerId: "MAVEN_DEPLOYER"
                 )
