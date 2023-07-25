@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Git') {
             steps {
-            git url: 'https://github.com/wakaleo/game-of-life.git',
+            git url: 'https://github.com/SyedSohail123/gol-jfrog.git',
                 branch: 'master'
             }
         }
