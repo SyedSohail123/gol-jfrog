@@ -14,8 +14,8 @@ pipeline {
                 rtMavenDeployer (
                     id: "MAVEN_DEPLOYER",
                     serverId: "ARTIFACTORY_SERVER",
-                    releaseRepo: ARTIFACTORY_LOCAL_RELEASE_REPO,
-                    snapshotRepo: ARTIFACTORY_LOCAL_SNAPSHOT_REPO
+                    releaseRepo: 'qtdevops-libs-release-local',
+                    snapshotRepo: 'qtdevops-libs-snapshot-local'
                 )
                 rtMavenRun (                    
                     pom: 'pom.xml',
