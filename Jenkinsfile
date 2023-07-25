@@ -5,12 +5,12 @@ pipeline {
         jdk 'JDK_8'               
     }
     stages {
-        stage('Git') {
-            steps {
-            git url: 'https://github.com/SyedSohail123/gol-jfrog.git',
-                branch: 'master'
-            }
-        }
+        // stage('Git') {
+        //     steps {
+        //     git url: 'https://github.com/SyedSohail123/gol-jfrog.git',
+        //         branch: 'master'
+        //     }
+        // }
         stage('Building Artifacts and pushing to Jfrog Repository') {
             steps {
                 export PATH="/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH"
