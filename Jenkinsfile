@@ -11,6 +11,7 @@ pipeline {
         }
         stage('Building Artifacts and pushing to Jfrog Repository') {
             steps {
+                sh 'java -version'
                 rtMavenDeployer (
                     id: "MAVEN_DEPLOYER",
                     serverId: "ARTIFACTORY_SERVER",
